@@ -17,4 +17,4 @@ This module allows to enable/disable each index on store level.
 * This module is currently being written for Magento CE 1.9+ support only.
 
 ## Contributors
-* [Manish Jain] (AOE)
+* [Manish Jain] (https://github.com/manish172) (AOE)
