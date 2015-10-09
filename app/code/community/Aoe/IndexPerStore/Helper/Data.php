@@ -3,7 +3,9 @@
 /**
  * Helper
  *
- * @author Manish Jain
+ * @category   Aoe
+ * @package    Aoe_IndexPerStore
+ * @author     Manish Jain <manish.jain@aoe.com>
  */
 class Aoe_IndexPerStore_Helper_Data extends Mage_Core_Helper_Abstract
 {
