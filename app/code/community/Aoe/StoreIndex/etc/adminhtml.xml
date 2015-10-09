@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    AOE
+ * @package     Aoe_StoreIndex
+ * @author      Manish Jain <manish.jain@aoe.com>
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <aoe_storeindex translate="title" module="aoe_storeindex">
+                                        <title>AOE Index Management</title>
+                                    </aoe_storeindex>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
