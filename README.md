@@ -2,12 +2,18 @@
 
 # Aoe_StoreIndex
 
-This module allows to disable the index on store level from `System -> Configuration -> ADVANCED -> AOE Index Management`.
+This module allows to disable the each index on store level
+
+## Configuration
+`System -> Configuration -> ADVANCED -> AOE Index Management`.
 
 ![Aoe_StoreIndex](doc/settings.png)
 
 ## License
 [OSL v3.0](http://opensource.org/licenses/OSL-3.0)
+
+## NOTE
+* This module is currently being written for Magento CE 1.9+ support only.
 
 ## Contributors
 * [Manish Jain] (AOE)
