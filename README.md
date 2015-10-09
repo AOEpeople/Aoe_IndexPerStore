@@ -1,8 +1,8 @@
-[![AOE](http://www.aoe.com/typo3conf/ext/aoe_template/i/aoe-logo.png)](http://www.aoe.com)
+![Aoe_StoreIndex](doc/aoe-logo.png)
 
 # Aoe_StoreIndex
 
-This module allows to disable the each index on store level.
+This module allows to enable/disable each index on store level.
 
 ## Configuration
 `System -> Configuration -> ADVANCED -> AOE Index Management`.
