@@ -38,14 +38,11 @@
     <default>
         <aoe_indexperstore>
             <options>
-                <product_attributes>1</product_attributes>
                 <catalog_url_rewrites>1</catalog_url_rewrites>
                 <category_flat>1</category_flat>
                 <product_flat>1</product_flat>
                 <category_product>1</category_product>
                 <fulltext>1</fulltext>
-                <product_price_and_stock>1</product_price_and_stock>
-                <tag_summary>1</tag_summary>
             </options>
         </aoe_indexperstore>
     </default>

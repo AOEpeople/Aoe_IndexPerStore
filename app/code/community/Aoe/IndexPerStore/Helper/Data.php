@@ -20,17 +20,6 @@ class Aoe_IndexPerStore_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_ENABLE_TAG_SUMMARY = 'aoe_indexperstore/options/tag_summary';
 
     /**
-     * Check if Product Attributes Index is enabled
-     *
-     * @param int|null $storeId
-     * @return bool
-     */
-    public function isProductAttributesIndexEnabled($storeId = null)
-    {
-        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_ATTRIBUTES, $storeId );
-    }
-
-    /**
      * Check if Catalog URL Rewrites Index is enabled
      *
      * @param int|null $storeId
@@ -83,27 +72,5 @@ class Aoe_IndexPerStore_Helper_Data extends Mage_Core_Helper_Abstract
     public function isFulltextIndexEnabled($storeId = null)
     {
         return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_FULLTEXT, $storeId );
-    }
-
-    /**
-     * Check if Product Price and Stock Index is enabled
-     *
-     * @param int|null $storeId
-     * @return bool
-     */
-    public function isPriceStockIndexEnabled($storeId = null)
-    {
-        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_PRICE_STOCK, $storeId );
-    }
-
-    /**
-     * Check if Tag Aggregation Data Index is enabled
-     *
-     * @param int|null $storeId
-     * @return bool
-     */
-    public function isTagSummaryIndexEnabled($storeId = null)
-    {
-        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_TAG_SUMMARY, $storeId );
     }
 }
