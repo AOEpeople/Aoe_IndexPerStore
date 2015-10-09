@@ -2,7 +2,7 @@
 <!--
 /**
  * @category    AOE
- * @package     Aoe_StoreIndex
+ * @package     Aoe_IndexPerStore
  * @author      Manish Jain <manish.jain@aoe.com>
  */
 -->
@@ -15,9 +15,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <aoe_storeindex translate="title" module="aoe_storeindex">
+                                    <aoe_indexperstore translate="title" module="aoe_indexperstore">
                                         <title>AOE Index Management</title>
-                                    </aoe_storeindex>
+                                    </aoe_indexperstore>
                                 </children>
                             </config>
                         </children>

@@ -3,10 +3,10 @@
  * Catalog Product Flat Indexer Resource Model
  *
  * @category   Aoe
- * @package    Aoe_StoreIndex
+ * @package    Aoe_IndexPerStore
  * @author     Manish Jain <manish.jain@aoe.com>
  */
-class Aoe_StoreIndex_Model_Catalog_Resource_Product_Flat_Indexer extends Mage_Catalog_Model_Resource_Product_Flat_Indexer
+class Aoe_IndexPerStore_Model_Resource_Catalog_Product_Flat_Indexer extends Mage_Catalog_Model_Resource_Product_Flat_Indexer
 {
     /**
      * Transactional rebuild Catalog Product Flat Data
@@ -15,11 +15,16 @@ class Aoe_StoreIndex_Model_Catalog_Resource_Product_Flat_Indexer extends Mage_Ca
      */
     public function reindexAll()
     {
-        foreach (Mage::app()->getStores() as $storeId => $store) {
 
-            $helper = Mage::helper('aoe_storeindex'); /* @var $helper Aoe_StoreIndex_Helper_Data */
-            if (!$helper->isProductFlatIndexEnabled($storeId)) {
-                return $this;
+        foreach (Mage::app()->getStores() as $storeId => $store) {
+            /**
+             * Skip product flat indexing if disabled for store
+             */
+            $helper = Mage::helper('aoe_indexperstore'); /* @var $helper Aoe_IndexPerStore_Helper_Data */
+            if ($helper->isProductFlatIndexEnabled($storeId) === false)
+            {
+                Mage::log('PRODUCT FLAT INDEXING IS DISABLED FOR STORE ID '. $storeId, null, 'aoe_indexperstore.log');
+                continue;
             }
 
             $this->prepareFlatTable($storeId);

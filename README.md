@@ -1,13 +1,13 @@
-![Aoe_StoreIndex](doc/aoe-logo.png)
+![Aoe_IndexPerStore](doc/aoe-logo.png)
 
-# Aoe_StoreIndex
+# Aoe_IndexPerStore
 
 This module allows to enable/disable each index on store level.
 
 ## Configuration
 `System -> Configuration -> ADVANCED -> AOE Index Management`.
 
-![Aoe_StoreIndex](doc/settings.png)
+![Aoe_IndexPerStore](doc/settings.png)
 
 ## License
 [OSL v3.0](http://opensource.org/licenses/OSL-3.0)

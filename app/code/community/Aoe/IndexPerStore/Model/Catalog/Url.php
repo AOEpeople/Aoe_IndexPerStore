@@ -3,10 +3,10 @@
  * Catalog url model
  *
  * @category   Aoe
- * @package    Aoe_StoreIndex
+ * @package    Aoe_IndexPerStore
  * @author     Manish Jain <manish.jain@aoe.com>
  */
-class Aoe_StoreIndex_Model_Catalog_Url extends Mage_Catalog_Model_Url
+class Aoe_IndexPerStore_Model_Catalog_Url extends Mage_Catalog_Model_Url
 {
     /**
      * Refresh all rewrite urls for some store or for all stores
@@ -23,9 +23,13 @@ class Aoe_StoreIndex_Model_Catalog_Url extends Mage_Catalog_Model_Url
             }
             return $this;
         }
-
-        $helper = Mage::helper('aoe_storeindex'); /* @var $helper Aoe_StoreIndex_Helper_Data */
-        if (!$helper->isCatalogUrlRewritesIndexEnabled($storeId)) {
+        /**
+         * Skip catalog url rewrite indexing if disabled for store
+         */
+        $helper = Mage::helper('aoe_indexperstore'); /* @var $helper Aoe_IndexPerStore_Helper_Data */
+        if ($helper->isCatalogUrlRewritesIndexEnabled($storeId) === false)
+        {
+            Mage::log('CATALOG URL REWRITES INDEXING IS DISABLED FOR STORE ID '. $storeId, null, 'aoe_indexperstore.log');
             return $this;
         }
 

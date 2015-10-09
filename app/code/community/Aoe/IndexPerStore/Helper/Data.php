@@ -5,19 +5,19 @@
  *
  * @author Manish Jain
  */
-class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
+class Aoe_IndexPerStore_Helper_Data extends Mage_Core_Helper_Abstract
 {
     /**
      * Enable/Disable Index constants
      */
-    const XML_PATH_ENABLE_PRODUCT_ATTRIBUTES = 'aoe_storeindex/options/product_attributes';
-    const XML_PATH_ENABLE_CATALOG_URL_REWRITES = 'aoe_storeindex/options/catalog_url_rewrites';
-    const XML_PATH_ENABLE_CATEGORY_FLAT = 'aoe_storeindex/options/category_flat';
-    const XML_PATH_ENABLE_PRODUCT_FLAT = 'aoe_storeindex/options/product_flat';
-    const XML_PATH_ENABLE_CATEGORY_PRODUCT = 'aoe_storeindex/options/category_product';
-    const XML_PATH_ENABLE_FULLTEXT = 'aoe_storeindex/options/fulltext';
-    const XML_PATH_ENABLE_PRODUCT_PRICE_STOCK = 'aoe_storeindex/options/product_price_and_stock';
-    const XML_PATH_ENABLE_TAG_SUMMARY = 'aoe_storeindex/options/tag_summary';
+    const XML_PATH_ENABLE_PRODUCT_ATTRIBUTES = 'aoe_indexperstore/options/product_attributes';
+    const XML_PATH_ENABLE_CATALOG_URL_REWRITES = 'aoe_indexperstore/options/catalog_url_rewrites';
+    const XML_PATH_ENABLE_CATEGORY_FLAT = 'aoe_indexperstore/options/category_flat';
+    const XML_PATH_ENABLE_PRODUCT_FLAT = 'aoe_indexperstore/options/product_flat';
+    const XML_PATH_ENABLE_CATEGORY_PRODUCT = 'aoe_indexperstore/options/category_product';
+    const XML_PATH_ENABLE_FULLTEXT = 'aoe_indexperstore/options/fulltext';
+    const XML_PATH_ENABLE_PRODUCT_PRICE_STOCK = 'aoe_indexperstore/options/product_price_and_stock';
+    const XML_PATH_ENABLE_TAG_SUMMARY = 'aoe_indexperstore/options/tag_summary';
 
     /**
      * Check if Product Attributes Index is enabled
@@ -27,7 +27,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isProductAttributesIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_ATTRIBUTES, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_ATTRIBUTES, $storeId );
     }
 
     /**
@@ -38,7 +38,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isCatalogUrlRewritesIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_CATALOG_URL_REWRITES, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_CATALOG_URL_REWRITES, $storeId );
     }
 
     /**
@@ -49,7 +49,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isCategoryFlatIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_CATEGORY_FLAT, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_CATEGORY_FLAT, $storeId );
     }
 
     /**
@@ -60,7 +60,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isProductFlatIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_FLAT, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_FLAT, $storeId );
     }
 
     /**
@@ -71,7 +71,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isCategoryProductIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_CATEGORY_PRODUCT, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_CATEGORY_PRODUCT, $storeId );
     }
 
     /**
@@ -82,7 +82,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isFulltextIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_FULLTEXT, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_FULLTEXT, $storeId );
     }
 
     /**
@@ -93,7 +93,7 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isPriceStockIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_PRICE_STOCK, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_PRODUCT_PRICE_STOCK, $storeId );
     }
 
     /**
@@ -104,6 +104,6 @@ class Aoe_StoreIndex_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isTagSummaryIndexEnabled($storeId = null)
     {
-        return Mage::getStoreConfig( self::XML_PATH_ENABLE_TAG_SUMMARY, $storeId );
+        return (bool) Mage::getStoreConfig( self::XML_PATH_ENABLE_TAG_SUMMARY, $storeId );
     }
 }

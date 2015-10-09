@@ -3,10 +3,10 @@
  * Category flat model
  *
  * @category   Aoe
- * @package    Aoe_StoreIndex
+ * @package    Aoe_IndexPerStore
  * @author     Manish Jain <manish.jain@aoe.com>
  */
-class Aoe_StoreIndex_Model_Catalog_Resource_Category_Flat extends Mage_Catalog_Model_Resource_Category_Flat
+class Aoe_IndexPerStore_Model_Resource_Catalog_Category_Flat extends Mage_Catalog_Model_Resource_Category_Flat
 {
     /**
      * Rebuild flat data from eav
@@ -29,9 +29,14 @@ class Aoe_StoreIndex_Model_Catalog_Resource_Category_Flat extends Mage_Catalog_M
         $categoriesIds = array();
         /* @var $store Mage_Core_Model_Store */
         foreach ($stores as $store) {
-            $helper = Mage::helper('aoe_storeindex'); /* @var $helper Aoe_StoreIndex_Helper_Data */
-            if (!$helper->isCategoryFlatIndexEnabled($store->getId())) {
-                return $this;
+            /**
+             * Skip category flat indexing if disabled for store
+             */
+            $helper = Mage::helper('aoe_indexperstore'); /* @var $helper Aoe_IndexPerStore_Helper_Data */
+            if ($helper->isCategoryFlatIndexEnabled($store->getId()) === false)
+            {
+                Mage::log('CATEGORY FLAT INDEXING IS DISABLED FOR STORE ID '. $store->getId(), null, 'aoe_indexperstore.log');
+                continue;
             }
 
             if ($this->_allowTableChanges) {

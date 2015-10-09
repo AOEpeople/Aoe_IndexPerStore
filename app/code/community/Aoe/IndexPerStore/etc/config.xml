@@ -1,36 +1,37 @@
 <?xml version="1.0" ?>
 <config>
     <modules>
-        <Aoe_StoreIndex>
+        <Aoe_IndexPerStore>
             <version>0.1.0</version>
-        </Aoe_StoreIndex>
+        </Aoe_IndexPerStore>
     </modules>
 
     <global>
 
         <helpers>
-            <aoe_storeindex>
-                <class>Aoe_StoreIndex_Helper</class>
-            </aoe_storeindex>
+            <aoe_indexperstore>
+                <class>Aoe_IndexPerStore_Helper</class>
+            </aoe_indexperstore>
         </helpers>
 
         <models>
             <catalog>
                 <rewrite>
-                    <url>Aoe_StoreIndex_Model_Catalog_Url</url>
+                    <url>Aoe_IndexPerStore_Model_Catalog_Url</url>
                 </rewrite>
             </catalog>
             <catalog_resource>
                 <rewrite>
-                    <category_flat>Aoe_StoreIndex_Model_Catalog_Resource_Category_Flat</category_flat>
-                    <product_flat_indexer>Aoe_StoreIndex_Model_Catalog_Resource_Product_Flat_Indexer</product_flat_indexer>
+                    <category_flat>Aoe_IndexPerStore_Model_Resource_Catalog_Category_Flat</category_flat>
+                    <product_flat_indexer>Aoe_IndexPerStore_Model_Resource_Catalog_Product_Flat_Indexer</product_flat_indexer>
+                    <category_indexer_product>Aoe_IndexPerStore_Model_Resource_Catalog_Category_Indexer_Product</category_indexer_product>
                 </rewrite>
             </catalog_resource>
         </models>
     </global>
 
     <default>
-        <aoe_storeindex>
+        <aoe_indexperstore>
             <options>
                 <product_attributes>1</product_attributes>
                 <catalog_url_rewrites>1</catalog_url_rewrites>
@@ -41,7 +42,7 @@
                 <product_price_and_stock>1</product_price_and_stock>
                 <tag_summary>1</tag_summary>
             </options>
-        </aoe_storeindex>
+        </aoe_indexperstore>
     </default>
 
 </config>
