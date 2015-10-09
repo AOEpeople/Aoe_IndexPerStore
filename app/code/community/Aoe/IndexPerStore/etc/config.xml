@@ -27,6 +27,11 @@
                     <category_indexer_product>Aoe_IndexPerStore_Model_Resource_Catalog_Category_Indexer_Product</category_indexer_product>
                 </rewrite>
             </catalog_resource>
+            <catalogsearch_resource>
+                <rewrite>
+                    <fulltext>Aoe_IndexPerStore_Model_Resource_CatalogSearch_Fulltext</fulltext>
+                </rewrite>
+            </catalogsearch_resource>
         </models>
     </global>
 
